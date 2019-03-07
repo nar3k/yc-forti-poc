@@ -3,3 +3,4 @@
 3) Заполняем переменные ( см terraform.tfvars )
 4) terraform init
 5) terraform apply
+6) Статик роуты надо донастроить руками

@@ -31,7 +31,7 @@ resource "yandex_compute_instance" "router_a" {
     nat       = true
   }
   network_interface {
-    subnet_id = "${element(local.subnet_a_ids, count.index)}"
+    subnet_id = "${element(local.router_subnet_a_ids, count.index)}"
   }
 
 
@@ -65,6 +65,6 @@ resource "yandex_compute_instance" "router_b" {
     nat       = true
   }
   network_interface {
-    subnet_id = "${element(local.subnet_b_ids, count.index)}"
+    subnet_id = "${element(local.router_subnet_b_ids, count.index)}"
   }
 }

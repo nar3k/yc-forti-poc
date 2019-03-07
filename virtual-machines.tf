@@ -28,7 +28,7 @@ resource "yandex_compute_instance" "slave_a" {
     ssh-keys  = "centos:${file("~/.ssh/id_rsa.pub")}"
   }
   network_interface {
-    subnet_id = "${element(local.subnet_a_ids, count.index)}"
+    subnet_id = "${element(local.user_subnet_a_ids, count.index)}"
   }
 
 }
@@ -58,7 +58,7 @@ resource "yandex_compute_instance" "slave_b" {
     ssh-keys  = "centos:${file("~/.ssh/id_rsa.pub")}"
   }
   network_interface {
-    subnet_id = "${element(local.subnet_b_ids, count.index)}"
+    subnet_id = "${element(local.user_subnet_b_ids, count.index)}"
   }
 
 }
@@ -87,7 +87,7 @@ resource "yandex_compute_instance" "bastion_a" {
     ssh-keys  = "centos:${file("~/.ssh/id_rsa.pub")}"
   }
   network_interface {
-    subnet_id = "${element(local.subnet_a_ids, 0)}"
+    subnet_id = "${element(local.user_subnet_a_ids, 0)}"
     nat       = true
   }
 
@@ -118,7 +118,7 @@ resource "yandex_compute_instance" "bastion_b" {
     ssh-keys  = "centos:${file("~/.ssh/id_rsa.pub")}"
   }
   network_interface {
-    subnet_id = "${element(local.subnet_b_ids, 0)}"
+    subnet_id = "${element(local.user_subnet_b_ids, 0)}"
     nat       = true
   }
 
