@@ -1,0 +1,5 @@
+token   =  ""
+cloud_id  = ""
+folder_id = ""
+public_key_path = "~/.ssh/id_rsa.pub"
+image_id = ""
